@@ -45,10 +45,10 @@ const updateMovieList = (movies) => {
     card.id = id;
     card.innerHTML = `
      <ul>
-        <img src="https://image.tmdb.org/t/p/w200${posterPath}" alt="${title}" />
+        <img src="https://image.tmdb.org/t/p/w200${posterPath}" id="poster" alt="${title}" />
         <h3>${title}</h3>
-        <p>${voteAverage}</p>
-        <p>${overview}</p>        
+        <p id="score">★ ${voteAverage}</p>
+        <p id="content">${overview}</p>        
      </ul>
     `;
     container.appendChild(card);
