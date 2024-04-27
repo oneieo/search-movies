@@ -23,6 +23,8 @@ const fetchShowMvlist = () => {
       updateMovieList(movies);
       // 카드 클릭하면 알럿으로 아이디 보여주는 함수
       clickEventToCards();
+      // 영화 검색시, 입력창한 키워드를 포함하는 제목의 영화 카드만 띄우는 이벤트
+      searchBtn.addEventListener("click", searchMovies);
     })
     .catch((err) => console.error("데이터 불러오기 중 에러 발생!"));
 };
@@ -42,12 +44,12 @@ const updateMovieList = (movies) => {
     card.classList.add("movie_card"); // 클래스 추가
     card.id = id;
     card.innerHTML = `
-    <ul>
-    <img src="https://image.tmdb.org/t/p/w200${posterPath}" alt="${title}" />
-    <h3>${title}</h3>
-    <p>${voteAverage}</p>
-    <p>${overview}</p>        
-    </ul>
+     <ul>
+        <img src="https://image.tmdb.org/t/p/w200${posterPath}" alt="${title}" />
+        <h3>${title}</h3>
+        <p>${voteAverage}</p>
+        <p>${overview}</p>        
+     </ul>
     `;
     container.appendChild(card);
   });
@@ -86,7 +88,6 @@ const searchMovies = () => {
     }
   });
 };
-searchBtn.addEventListener("click", searchMovies);
 
 fetchShowMvlist();
 
