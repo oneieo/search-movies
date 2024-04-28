@@ -90,10 +90,10 @@ const searchMovies = () => {
 };
 
 const enterKey = () => {
-    if(event.keyCode === 13) {
+    if(window.event.keyCode === 13) {
       document.getElementById("searchBtn").click();
     }
-  }
+}
 
 fetchShowMvlist();
 
