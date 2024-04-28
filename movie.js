@@ -48,7 +48,7 @@ const updateMovieList = (movies) => {
         <img src="https://image.tmdb.org/t/p/w200${posterPath}" id="poster" alt="${title}" />
         <h3>${title}</h3>
         <p id="score">★ ${voteAverage}</p>
-        <p id="content">${overview}</p>        
+        <p id="content">${overview}</p>               
      </ul>
     `;
     container.appendChild(card);
@@ -88,6 +88,12 @@ const searchMovies = () => {
     }
   });
 };
+
+const enterKey = () => {
+    if(event.keyCode === 13) {
+      document.getElementById("searchBtn").click();
+    }
+  }
 
 fetchShowMvlist();
 
