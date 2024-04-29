@@ -34,15 +34,14 @@ const updateMovieList = (movies) => {
   container.innerHTML = "";
   
   movies.forEach((movie) => {
-    let title = movie.title;
-    let voteAverage = movie.vote_average;
-    let overview = movie.overview;
-    let posterPath = movie.poster_path;
-    let id = movie.id;
+    const title = movie.title;
+    const voteAverage = movie.vote_average;
+    const overview = movie.overview;
+    const posterPath = movie.poster_path;
     
-    let card = document.createElement("div");
+    const card = document.createElement("div");
     card.classList.add("movie_card"); // 클래스 추가
-    card.id = id;
+    
     card.innerHTML = `
      <ul>
         <img src="https://image.tmdb.org/t/p/w200${posterPath}" id="poster" alt="${title}" />
@@ -75,15 +74,15 @@ const searchBox = document.getElementById("searchBox");
 const searchBtn = document.getElementById("searchBtn");
 
 const searchMovies = () => {
-  const keyword = searchBox.value.trim().toLowerCase();
+  const keyword = searchBox.value.trim().toLowerCase();  
   const cards = document.querySelectorAll(".movie_card");
   cards.forEach((card) => {
-    const titleElement = card.querySelector("h3");
+    const titleElement = card.querySelector("h3");  //여기 두 줄 합치기
     const title = titleElement.textContent.trim().toLowerCase();
 
     if (title.includes(keyword)) {
       card.style.display = "block";
-    } else {
+    } else {    
       card.style.display = "none";
     }
   });
