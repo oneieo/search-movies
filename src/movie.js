@@ -101,11 +101,11 @@ const searchMovies = () => {
   });
 };
 
-const enterKey = () => {
-    if(window.event.keyCode === 13) {
-      document.getElementById("searchBtn").click();
-    }
-}
+searchBox.addEventListener("keyup", (e) => {
+  if(e.key === 'Enter'){
+    document.getElementById("searchBtn").click();
+  }
+})
 
 fetchShowMvlist();
 
