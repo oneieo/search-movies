@@ -13,8 +13,8 @@ const options = {
 };
 
 // 영화 데이터 가져와서 화면에 보여주는 fetch 함수
-const fetchShowMvlist = () => {
-  fetch(apiUrl, options)
+const fetchShowMvlist = async () => {
+  await fetch(apiUrl, options)
     .then((response) => response.json())
     .then((data) => {
       // 영화 데이터 배열
