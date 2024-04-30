@@ -119,28 +119,10 @@ body {
     padding-top: 10px;
     font-size: 10px;
   }
-
-
 }
 
 .movie_card:hover {
   cursor: pointer;
   transform: translateY(-3%);
   transition: 0.5s;
-
-  /* h3 {
-    color:rgb(181, 218, 255)
-  }*/
 } 
-
-
-
-/*
-    img{min-height: 100%; max-width: 100%; }
-    .imgHoverEvent{width: 200px; height: 200px; margin: 30px; position: relative; overflow: hidden; display: inline-block;}
-    .imgHoverEvent .imgBox{width: 200px; height: 200px; text-align: center; background:url(http://gahyun.wooga.kr/portfolio/triple/resources/img/city00.jpg) no-repeat 50% 50%; background-size: auto 100%;}
-    .imgHoverEvent .hoverBox{position: absolute; top:0; left: 0; width: 200px; height: 200px;}
-    .hoverBox p.p1{text-align:center; font-size:18px;}
-    .hoverBox p.p2{margin-top: 40px;}
-    .event1 .hoverBox{background: linear-gradient(to bottom, rgba(0,0,0,0) 5%,rgba(255,255,255,1) 90%); transform: translateY(60%); transition: 0.5s;}
-*/

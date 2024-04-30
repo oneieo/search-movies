@@ -38,12 +38,14 @@ const updateMovieList = (movies) => {
     const voteAverage = movie.vote_average;
     const overview = movie.overview;
     const posterPath = movie.poster_path;
+    const id = movie.id;
     
     const card = document.createElement("div");
     card.classList.add("movie_card"); // 클래스 추가
-    
+    card.id = id;
+    // ul 태그 수정
     card.innerHTML = `
-     <ul>
+     <ul>  
         <img src="https://image.tmdb.org/t/p/w200${posterPath}" id="poster" alt="${title}" />
         <h3>${title}</h3>
         <p id="score">★ ${voteAverage}</p>
@@ -64,6 +66,8 @@ const clickEventToCards = () => {
   cards.forEach((card) => {
     card.addEventListener("click", () => {
       const movieId = card.id;
+      console.log(movieId);
+      console.log(card);
       cardClick(movieId);
     });
   });
