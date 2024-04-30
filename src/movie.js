@@ -22,7 +22,7 @@ const fetchShowMvlist = async () => {
       // 영화 리스트 보여주는 함수
       updateMovieList(movies);
       // 카드 클릭하면 알럿으로 아이디 보여주는 함수
-      clickEventToCards();      //cardPart.addEventListener("click", clickEventToCards2(event));
+      //clickEventToCards(); 
       // 영화 검색시, 입력창한 키워드를 포함하는 제목의 영화 카드만 띄우는 이벤트
       searchBtn.addEventListener("click", searchMovies);
     })
@@ -43,7 +43,7 @@ const updateMovieList = (movies) => {
     const card = document.createElement("div");
     card.classList.add("movie_card"); // 클래스 추가
     card.id = id;
-    // ul 태그 수정
+
     card.innerHTML = `
      <div>  
         <img src="https://image.tmdb.org/t/p/w200${posterPath}" id="poster" alt="${title}" />
@@ -53,23 +53,23 @@ const updateMovieList = (movies) => {
      </div>
     `;
     container.appendChild(card);
-  });
-};
 
-// 카드 클릭하면 해당 영화의 id를 알럿으로 띄우는 함수
-const cardClick = (movieId) => {
-  alert(`영화 id: ${movieId}`);
-};
-
-const clickEventToCards = () => {
-  const cards = document.querySelectorAll(".movie_card");
-  cards.forEach((card) => {
+    // 카드 클릭하면 알럿으로 아이디 보여주는 함수 (피드백)
     card.addEventListener("click", () => {
-      const movieId = card.id;
-      cardClick(movieId);
-    });
+      alert(`영화 ID: ${id}`);
+    })
   });
 };
+
+// 피드백 - 일괄적으로 등록하지 않고 updateMovieList에서 DOM을 생성할 때 같이 개별로 등록
+// const clickEventToCards = () => {
+//   const cards = document.querySelectorAll(".movie_card");
+//   cards.forEach((card) => {
+//     card.addEventListener("click", () => {
+//       alert(`영화 id: ${card.id}`);
+//     });
+//   });
+// };
 
 // const clickEventToCards2 = (event) => {
 //   const cardPart = document.getElementById("movie_cards")
@@ -90,7 +90,7 @@ const searchMovies = () => {
   const keyword = searchBox.value.trim().toLowerCase();  
   const cards = document.querySelectorAll(".movie_card");
   cards.forEach((card) => {
-    const titleElement = card.querySelector("h3");  //여기 두 줄 합치기
+    const titleElement = card.querySelector("h3");
     const title = titleElement.textContent.trim().toLowerCase();
 
     if (title.includes(keyword)) {
@@ -219,5 +219,3 @@ fetchShowMvlist();
 // searchBtn.addEventListener('click', () => {
 //     searchMovies();
 // });
-
-// 함수 만들기 함수형프로그래밍,클래스 강의
