@@ -41,7 +41,7 @@ const updateMovieList = (movies) => {
     const id = movie.id;
     
     const card = document.createElement("div");
-    card.classList.add("movie_card"); // 클래스 추가
+    card.classList.add("movie_card"); 
     card.id = id;
 
     card.innerHTML = `
@@ -71,6 +71,7 @@ const updateMovieList = (movies) => {
 //   });
 // };
 
+// 과제 해설 영상 시청 후 구현해보다가 제출하였습니다 ..!
 // const clickEventToCards2 = (event) => {
 //   const cardPart = document.getElementById("movie_cards")
 //   console.log(cardPart);  // null?
