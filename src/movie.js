@@ -22,7 +22,7 @@ const fetchShowMvlist = () => {
       // 영화 리스트 보여주는 함수
       updateMovieList(movies);
       // 카드 클릭하면 알럿으로 아이디 보여주는 함수
-      clickEventToCards();
+      clickEventToCards();      //cardPart.addEventListener("click", clickEventToCards2(event));
       // 영화 검색시, 입력창한 키워드를 포함하는 제목의 영화 카드만 띄우는 이벤트
       searchBtn.addEventListener("click", searchMovies);
     })
@@ -45,12 +45,12 @@ const updateMovieList = (movies) => {
     card.id = id;
     // ul 태그 수정
     card.innerHTML = `
-     <ul>  
+     <div>  
         <img src="https://image.tmdb.org/t/p/w200${posterPath}" id="poster" alt="${title}" />
         <h3>${title}</h3>
         <p id="score">★ ${voteAverage}</p>
         <p id="content">${overview}</p>               
-     </ul>
+     </div>
     `;
     container.appendChild(card);
   });
@@ -66,12 +66,21 @@ const clickEventToCards = () => {
   cards.forEach((card) => {
     card.addEventListener("click", () => {
       const movieId = card.id;
-      console.log(movieId);
-      console.log(card);
       cardClick(movieId);
     });
   });
 };
+
+// const clickEventToCards2 = (event) => {
+//   const cardPart = document.getElementById("movie_cards")
+//   console.log(cardPart);  // null?
+//   if(event.target === cardPart) return;  // 이벤트가 발생한 요소
+//   if(event.target.matches(".movie_card")) {
+//     alert(`Movie Id: ${event.target.id}`);
+//   } else {
+//     alert(`Movie Id: ${event.target.parentNode.id}`);
+//   }
+// }
 
 // 입력창 요소, 검색 버튼 가져오기
 const searchBox = document.getElementById("searchBox");

@@ -92,7 +92,7 @@ body {
   border: none;
   border-radius: 10px;
   padding: 20px;
-  margin: 50px auto 0px auto;
+  margin: 40px auto 0px auto;
   display: flex;
   justify-content: center;
   background-color: rgb(26, 26, 26);
@@ -107,6 +107,7 @@ body {
     font-weight: bold;
     font-size: 20px;
     padding-top: 10px;
+    line-height: 120%;
   }
 
   #score {
@@ -118,6 +119,8 @@ body {
   #content {
     padding-top: 10px;
     font-size: 10px;
+    line-height: 140%;
+    color:rgb(125, 125, 125)
   }
 }
 
